@@ -1,5 +1,6 @@
-// path: D:\satyam\anmol\pages\index.tsx
 "use client";
+
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -52,8 +53,14 @@ export default function HomePage() {
         >
           {slides.map(({ img, title, subtitle, id }, index) => (
             <SwiperSlide key={index}>
-              <div className="relative h-[85vh] bg-gray-100">
-                <img src={img} alt={title} className="w-full h-full object-cover brightness-75" />
+              <div className="relative h-[85vh] w-full bg-gray-100">
+                <Image
+                  src={img}
+                  alt={title}
+                  fill
+                  className="object-cover brightness-75"
+                  priority
+                />
                 <div
                   className="absolute top-5 right-5 p-2 cursor-pointer z-20"
                   onClick={(e) => {
@@ -69,7 +76,9 @@ export default function HomePage() {
                 </div>
                 <div className="absolute inset-0 flex flex-col justify-center items-start">
                   <div className="w-[85vw] mx-auto px-4 text-white">
-                    <h2 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">{title}</h2>
+                    <h2 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
+                      {title}
+                    </h2>
                     <p className="text-lg md:text-2xl mb-8 drop-shadow-md">{subtitle}</p>
                     <Link
                       href={`/product/${id}`}

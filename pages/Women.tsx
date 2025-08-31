@@ -53,7 +53,7 @@ export default function WomenCraft() {
         id: product.id,
         img: product.img,
         title: product.title,
-        price: product.price, // already number ✅
+        price: product.price, 
       });
     }
   };
@@ -72,7 +72,7 @@ export default function WomenCraft() {
             data-aos-delay={index * 100}
           >
             <Link href={`/product/${product.id}`}>
-              <div className="relative w-80 h-100 cursor-pointer">
+              <div className="relative w-80 h-80 cursor-pointer">
                 <Image
                   src={product.img}
                   alt={product.title}
