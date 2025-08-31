@@ -7,18 +7,18 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const WorktProducts = [
-  { id: "401", img: "/images/work-img-1.webp", title: "Decorative Metal Vase", price: "₹1500" },
-  { id: "402", img: "/images/metal-product-img.webp", title: "Handmade Metal Sculpture", price: "₹2200" },
-  { id: "403", img: "/images/work-img-3.webp", title: "Designer Metal Bowl", price: "₹1800" },
-  { id: "404", img: "/images/work-img-3.webp", title: "Designer Metal Bowl", price: "₹1800" },
-  { id: "405", img: "/images/work-img-4.webp", title: "Decorative Metal Vase", price: "₹1500" },
-  { id: "406", img: "/images/work-img-2.webp", title: "Handmade Metal Sculpture", price: "₹2200" },
-  { id: "407", img: "/images/metal-product-img-2.webp", title: "Decorative Metal Vase", price: "₹1500" },
-  { id: "408", img: "/images/work-img-1.webp", title: "Handmade Metal Sculpture", price: "₹2200" },
-  { id: "409", img: "/images/work-img-3.webp", title: "Designer Metal Bowl", price: "₹1800" },
-  { id: "410", img: "/images/work-img-4.webp", title: "Decorative Metal Vase", price: "₹1500" },
-  { id: "411", img: "/images/metal-product-img.webp", title: "Handmade Metal Sculpture", price: "₹2200" },
-  { id: "412", img: "/images/work-img-1.webp", title: "Designer Metal Bowl", price: "₹1800" },
+  { id: "401", img: "/images-new/work-img-1.webp", title: "Decorative Metal Vase", price: "₹1500" },
+  { id: "402", img: "/images-new/metal-product-img.webp", title: "Handmade Metal Sculpture", price: "₹2200" },
+  { id: "403", img: "/images-new/work-img-3.webp", title: "Designer Metal Bowl", price: "₹1800" },
+  { id: "404", img: "/images-new/work-img-3.webp", title: "Designer Metal Bowl", price: "₹1800" },
+  { id: "405", img: "/images-new/work-img-4.webp", title: "Decorative Metal Vase", price: "₹1500" },
+  { id: "406", img: "/images-new/work-img-2.webp", title: "Handmade Metal Sculpture", price: "₹2200" },
+  { id: "407", img: "/images-new/metal-product-img-2.webp", title: "Decorative Metal Vase", price: "₹1500" },
+  { id: "408", img: "/images-new/work-img-1.webp", title: "Handmade Metal Sculpture", price: "₹2200" },
+  { id: "409", img: "/images-new/work-img-3.webp", title: "Designer Metal Bowl", price: "₹1800" },
+  { id: "410", img: "/images-new/work-img-4.webp", title: "Decorative Metal Vase", price: "₹1500" },
+  { id: "411", img: "/images-new/metal-product-img.webp", title: "Handmade Metal Sculpture", price: "₹2200" },
+  { id: "412", img: "/images-new/work-img-1.webp", title: "Designer Metal Bowl", price: "₹1800" },
 ];
 
 export default function WorkCraft() {

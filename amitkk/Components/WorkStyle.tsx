@@ -10,10 +10,10 @@ export default function WorkInStyle() {
   const { addToWishlist, removeFromWishlist } = useWishlist();
 
   const WorktProducts = [
-    { id: 401, img: "/images/work-img-1.webp", title: "Exclusive Jaali Wood Desk Caddy", category: "JAALI WOOD", price: "₹ 4,450 INR" },
-    { id: 402, img: "/images/work-img-2.webp", title: "Bidri Craft Utility Gift Set Ornate", category: "BIDRI", price: "₹ 6,360 INR" },
-    { id: 403, img: "/images/work-img-3.webp", title: "Wooden Jaali Stationery Holder", category: "JAALI WOOD", price: "₹ 3,250 INR" },
-    { id: 404, img: "/images/work-img-4.webp", title: "Wooden Jaali Desk Set", category: "JAALI WOOD", price: "₹ 2,650 INR" },
+    { id: 401, img: "/images-new/work-img-1.webp", title: "Exclusive Jaali Wood Desk Caddy", category: "JAALI WOOD", price: "₹ 4,450 INR" },
+    { id: 402, img: "/images-new/work-img-2.webp", title: "Bidri Craft Utility Gift Set Ornate", category: "BIDRI", price: "₹ 6,360 INR" },
+    { id: 403, img: "/images-new/work-img-3.webp", title: "Wooden Jaali Stationery Holder", category: "JAALI WOOD", price: "₹ 3,250 INR" },
+    { id: 404, img: "/images-new/work-img-4.webp", title: "Wooden Jaali Desk Set", category: "JAALI WOOD", price: "₹ 2,650 INR" },
   ];
 
   const [likedItems, setLikedItems] = useState<{ [key: number]: boolean }>({});

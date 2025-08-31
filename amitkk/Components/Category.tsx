@@ -7,7 +7,7 @@ import { useWishlist } from "@/amitkk/context/WishlistContext";
 const craftProducts = [
   {
     id: 101,
-    img: "/images/home-page-img-6.avif",
+    img: "/images-new/home-page-img-6.avif",
     titleamt: "$250",
     size: "Medium",
     type: "Handmade Decorative Item",
@@ -16,7 +16,7 @@ const craftProducts = [
   },
   {
     id: 102,
-    img: "/images/home-page-img-5.avif",
+    img: "/images-new/home-page-img-5.avif",
     titleamt: "$250",
     size: "Medium",
     type: "Handmade Decorative Item",
@@ -25,7 +25,7 @@ const craftProducts = [
   },
   {
     id: 103,
-    img: "/images/home-page-img-4.avif",
+    img: "/images-new/home-page-img-4.avif",
     titleamt: "$250",
     size: "Medium",
     type: "Handmade Decorative Item",
@@ -34,7 +34,7 @@ const craftProducts = [
   },
   {
     id: 104,
-    img: "/images/hand-made-jewelary.jpg",
+    img: "/images-new/hand-made-jewelary.jpg",
     titleamt: "$250",
     size: "Medium",
     type: "Handmade Decorative Item",

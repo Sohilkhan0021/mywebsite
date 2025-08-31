@@ -8,18 +8,18 @@ import "aos/dist/aos.css";
 import { useWishlist } from "@/amitkk/context/WishlistContext";
 
 const homelivingProducts = [
-  { id: "701", img: "/images/frame-1.webp", title: "Decorative Metal Vase", price: "₹1500" },
-  { id: "702", img: "/images/frame-3.jpg", title: "Handmade Metal Sculpture", price: "₹2200" },
-  { id: "703", img: "/images/frame-4.jpg", title: "Designer Metal Bowl", price: "₹1800" },
-  { id: "704", img: "/images/frame-3.jpg", title: "Designer Metal Bowl", price: "₹1800" },
-  { id: "705", img: "/images/frame-1.webp", title: "Decorative Metal Vase", price: "₹1500" },
-  { id: "706", img: "/images/frame-4.jpg", title: "Handmade Metal Sculpture", price: "₹2200" },
-  { id: "707", img: "/images/frame-1.webp", title: "Decorative Metal Vase", price: "₹1500" },
-  { id: "708", img: "/images/frame-3.jpg", title: "Handmade Metal Sculpture", price: "₹2200" },
-  { id: "709", img: "/images/frame-4.jpg", title: "Designer Metal Bowl", price: "₹1800" },
-  { id: "710", img: "/images/frame-3.jpg", title: "Decorative Metal Vase", price: "₹1500" },
-  { id: "711", img: "/images/frame-1.webp", title: "Handmade Metal Sculpture", price: "₹2200" },
-  { id: "712", img: "/images/frame-4.jpg", title: "Designer Metal Bowl", price: "₹1800" },
+  { id: "701", img: "/images-new/frame-1.webp", title: "Decorative Metal Vase", price: "₹1500" },
+  { id: "702", img: "/images-new/frame-3.jpg", title: "Handmade Metal Sculpture", price: "₹2200" },
+  { id: "703", img: "/images-new/frame-4.jpg", title: "Designer Metal Bowl", price: "₹1800" },
+  { id: "704", img: "/images-new/frame-3.jpg", title: "Designer Metal Bowl", price: "₹1800" },
+  { id: "705", img: "/images-new/frame-1.webp", title: "Decorative Metal Vase", price: "₹1500" },
+  { id: "706", img: "/images-new/frame-4.jpg", title: "Handmade Metal Sculpture", price: "₹2200" },
+  { id: "707", img: "/images-new/frame-1.webp", title: "Decorative Metal Vase", price: "₹1500" },
+  { id: "708", img: "/images-new/frame-3.jpg", title: "Handmade Metal Sculpture", price: "₹2200" },
+  { id: "709", img: "/images-new/frame-4.jpg", title: "Designer Metal Bowl", price: "₹1800" },
+  { id: "710", img: "/images-new/frame-3.jpg", title: "Decorative Metal Vase", price: "₹1500" },
+  { id: "711", img: "/images-new/frame-1.webp", title: "Handmade Metal Sculpture", price: "₹2200" },
+  { id: "712", img: "/images-new/frame-4.jpg", title: "Designer Metal Bowl", price: "₹1800" },
 ];
 
 export default function MetalCraft() {
