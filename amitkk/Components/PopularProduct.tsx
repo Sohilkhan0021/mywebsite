@@ -12,13 +12,13 @@ export default function AnmoleSection() {
   const router = useRouter();
   
   const images = [
-    "/images-new/metal-product-img-2.webp",
-    "/images-new/metal-product-img.webp",
-    "/images-new/work-img-3.webp",
-    "/images-new/work-img-1.webp",
-    "/images-new/metal-product-img.webp",
-    "/images-new/work-img-2.webp",
-    "/images-new/work-img-3.webp",
+    "/images/metal-product-img-2.webp",
+    "/images/metal-product-img.webp",
+    "/images/work-img-3.webp",
+    "/images/work-img-1.webp",
+    "/images/metal-product-img.webp",
+    "/images/work-img-2.webp",
+    "/images/work-img-3.webp",
   ];
 
   return (

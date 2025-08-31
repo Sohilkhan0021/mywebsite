@@ -49,7 +49,7 @@ export default function Collections() {
         </div>
         <div className="flex-1 flex justify-center mt-10 md:mt-0">
           <Image
-            src="/images-new/statue-img-1.png"
+            src="/images/statue-img-1.png"
             alt="Handmade Statue"
             width={400}
             height={400}

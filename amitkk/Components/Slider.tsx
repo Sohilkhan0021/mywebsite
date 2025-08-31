@@ -33,14 +33,14 @@ export default function ImageSliderTailwind() {
 };
 
   const products = [
-    { id: "1", img: "/images-new/home-page-img-1.webp" ,price:250},
-    { id: "2", img: "/images-new/home-page-img-2.webp",price:250 },
-    { id: "3", img: "/images-new/home-page-img-3.avif",price:250 },
-    { id: "4", img: "/images-new/home-page-img-4.avif",price:250 },
-    { id: "5", img: "/images-new/home-page-img-5.avif",price:250 },
-    { id: "6", img: "/images-new/home-page-img-6.avif" ,price:250},
-    { id: "201", img: "/images-new/hand-bag.png",price:250 },
-    { id: "104", img: "/images-new/hand-made-jewelary.jpg",price:250 },
+    { id: "1", img: "/images/home-page-img-1.webp" ,price:250},
+    { id: "2", img: "/images/home-page-img-2.webp",price:250 },
+    { id: "3", img: "/images/home-page-img-3.avif",price:250 },
+    { id: "4", img: "/images/home-page-img-4.avif",price:250 },
+    { id: "5", img: "/images/home-page-img-5.avif",price:250 },
+    { id: "6", img: "/images/home-page-img-6.avif" ,price:250},
+    { id: "201", img: "/images/hand-bag.png",price:250 },
+    { id: "104", img: "/images/hand-made-jewelary.jpg",price:250 },
   ];
 
   return (

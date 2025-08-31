@@ -48,7 +48,7 @@ export default function MetalCraftSection() {
         <div className="col-span-12 md:col-span-6 grid grid-cols-1 md:grid-cols-2 gap-8">
           <div data-aos="fade-right">
             <Image
-              src="/images-new/metal-product-img.webp"
+              src="/images/metal-product-img.webp"
               alt="Dhokra Craft Curio - The Horse"
               width={400}
               height={400}
@@ -64,7 +64,7 @@ export default function MetalCraftSection() {
           </div>
           <div data-aos="fade-left">
             <Image
-              src="/images-new/metal-product-img-2.webp"
+              src="/images/metal-product-img-2.webp"
               alt="Dhokra Metal Craft Wall Hanger - Fish"
               width={400}
               height={400}

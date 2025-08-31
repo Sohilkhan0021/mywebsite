@@ -22,12 +22,12 @@ import UserForm from "@/amitkk/Components/Explor";
 import { useWishlist } from "@/amitkk/context/WishlistContext";
 
 const slides = [
-  { id: "1", img: "/images-new/home-page-img-6.avif", title: "Discover Beautiful Crafts", subtitle: "Handmade with love and care" },
-  { id: "2", img: "/images-new/home-page-img-2.webp", title: "New Arrivals for You", subtitle: "Explore our latest collection" },
-  { id: "3", img: "/images-new/home-page-img-3.avif", title: "Craft Your Dreams", subtitle: "Decorate your space creatively" },
-  { id: "4", img: "/images-new/home-page-img-4.avif", title: "Exclusive Paper Crafts", subtitle: "Unique designs to inspire" },
-  { id: "5", img: "/images-new/home-page-img-5.avif", title: "Make Every Moment Special", subtitle: "Crafts for every occasion" },
-  { id: "6", img: "/images-new/home-page-img-1.webp", title: "Shop Handmade with Passion", subtitle: "Support local artisans" },
+  { id: "1", img: "/images/home-page-img-6.avif", title: "Discover Beautiful Crafts", subtitle: "Handmade with love and care" },
+  { id: "2", img: "/images/home-page-img-2.webp", title: "New Arrivals for You", subtitle: "Explore our latest collection" },
+  { id: "3", img: "/images/home-page-img-3.avif", title: "Craft Your Dreams", subtitle: "Decorate your space creatively" },
+  { id: "4", img: "/images/home-page-img-4.avif", title: "Exclusive Paper Crafts", subtitle: "Unique designs to inspire" },
+  { id: "5", img: "/images/home-page-img-5.avif", title: "Make Every Moment Special", subtitle: "Crafts for every occasion" },
+  { id: "6", img: "/images/home-page-img-1.webp", title: "Shop Handmade with Passion", subtitle: "Support local artisans" },
 ];
 
 export default function HomePage() {

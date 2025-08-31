@@ -8,18 +8,18 @@ import "aos/dist/aos.css";
 import { useWishlist } from "@/amitkk/context/WishlistContext";
 
 const WomenProducts = [
-  { id: "501", img: "/images-new/Ear-rings-1.jpg", title: "Decorative Metal Vase", price: 1500 },
-  { id: "502", img: "/images-new/Ear-rings-2.jpg", title: "Handmade Metal Sculpture", price: 2000 },
-  { id: "503", img: "/images-new/Ear-rings-3.jpg", title: "Designer Metal Bowl", price: 18000 },
-  { id: "504", img: "/images-new/Ear-rings-4.jpg", title: "Designer Metal Bowl", price: 1800 },
-  { id: "505", img: "/images-new/Ear-rings-5.jpg", title: "Decorative Metal Vase", price: 1890 },
-  { id: "506", img: "/images-new/Ear-rings-6.jpg", title: "Handmade Metal Sculpture", price: 23456 },
-  { id: "507", img: "/images-new/Ear-rings-7.jpg", title: "Decorative Metal Vase", price: 3453 },
-  { id: "508", img: "/images-new/Ear-rings-1.jpg", title: "Handmade Metal Sculpture", price: 34567 },
-  { id: "509", img: "/images-new/Ear-rings-2.jpg", title: "Designer Metal Bowl", price: 6543 },
-  { id: "510", img: "/images-new/Ear-rings-3.jpg", title: "Decorative Metal Vase", price: 7654 },
-  { id: "511", img: "/images-new/Ear-rings-4.jpg", title: "Handmade Metal Sculpture", price: 8765 },
-  { id: "512", img: "/images-new/Ear-rings-5.jpg", title: "Designer Metal Bowl", price: 98765 },
+  { id: "501", img: "/images/Ear-rings-1.jpg", title: "Decorative Metal Vase", price: 1500 },
+  { id: "502", img: "/images/Ear-rings-2.jpg", title: "Handmade Metal Sculpture", price: 2000 },
+  { id: "503", img: "/images/Ear-rings-3.jpg", title: "Designer Metal Bowl", price: 18000 },
+  { id: "504", img: "/images/Ear-rings-4.jpg", title: "Designer Metal Bowl", price: 1800 },
+  { id: "505", img: "/images/Ear-rings-5.jpg", title: "Decorative Metal Vase", price: 1890 },
+  { id: "506", img: "/images/Ear-rings-6.jpg", title: "Handmade Metal Sculpture", price: 23456 },
+  { id: "507", img: "/images/Ear-rings-7.jpg", title: "Decorative Metal Vase", price: 3453 },
+  { id: "508", img: "/images/Ear-rings-1.jpg", title: "Handmade Metal Sculpture", price: 34567 },
+  { id: "509", img: "/images/Ear-rings-2.jpg", title: "Designer Metal Bowl", price: 6543 },
+  { id: "510", img: "/images/Ear-rings-3.jpg", title: "Decorative Metal Vase", price: 7654 },
+  { id: "511", img: "/images/Ear-rings-4.jpg", title: "Handmade Metal Sculpture", price: 8765 },
+  { id: "512", img: "/images/Ear-rings-5.jpg", title: "Designer Metal Bowl", price: 98765 },
 ];
 
 type Product = {
