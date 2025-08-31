@@ -60,8 +60,8 @@ export default function AnmoleSection() {
             breakpoints={{
               320: { slidesPerView: 1.2 },
               640: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-              1280: { slidesPerView: 4 },
+              1024: { slidesPerView: 2 },
+              1280: { slidesPerView: 2 },
             }}
           >
             {images.concat(images).map((src, index) => (
