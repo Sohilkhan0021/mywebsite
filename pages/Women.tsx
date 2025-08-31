@@ -14,13 +14,20 @@ const WomenProducts = [
   { id: "504", img: "/images/Ear-rings-4.jpg", title: "Designer Metal Bowl", price: 1800 },
   { id: "505", img: "/images/Ear-rings-5.jpg", title: "Decorative Metal Vase", price: 1890 },
   { id: "506", img: "/images/Ear-rings-6.jpg", title: "Handmade Metal Sculpture", price: 23456 },
-  { id: "507", img: "/images/Ear-rings-7.jpg", title: "Decorative Metal Vase", price:3453 },
+  { id: "507", img: "/images/Ear-rings-7.jpg", title: "Decorative Metal Vase", price: 3453 },
   { id: "508", img: "/images/Ear-rings-1.jpg", title: "Handmade Metal Sculpture", price: 34567 },
   { id: "509", img: "/images/Ear-rings-2.jpg", title: "Designer Metal Bowl", price: 6543 },
   { id: "510", img: "/images/Ear-rings-3.jpg", title: "Decorative Metal Vase", price: 7654 },
   { id: "511", img: "/images/Ear-rings-4.jpg", title: "Handmade Metal Sculpture", price: 8765 },
   { id: "512", img: "/images/Ear-rings-5.jpg", title: "Designer Metal Bowl", price: 98765 },
 ];
+
+type Product = {
+  id: string;
+  img: string;
+  title: string;
+  price: number; // keep consistent
+};
 
 export default function WomenCraft() {
   const [likedItems, setLikedItems] = useState<{ [key: string]: boolean }>({});
@@ -33,7 +40,7 @@ export default function WomenCraft() {
     });
   }, []);
 
-  const toggleLike = (product: { id: string; img: string; title: string; price: string }) => {
+  const toggleLike = (product: Product) => {
     setLikedItems((prev) => ({
       ...prev,
       [product.id]: !prev[product.id],
@@ -46,7 +53,7 @@ export default function WomenCraft() {
         id: product.id,
         img: product.img,
         title: product.title,
-        price: product.price,
+        price: product.price, // already number ✅
       });
     }
   };
@@ -88,7 +95,9 @@ export default function WomenCraft() {
               <h2 className="text-lg font-semibold text-black">
                 {product.title}
               </h2>
-              <p className="text-[#3e402d] font-bold mt-2">{product.price}</p>
+              <p className="text-[#3e402d] font-bold mt-2">
+                ₹{product.price.toLocaleString("en-IN")}
+              </p>
             </div>
           </div>
         ))}

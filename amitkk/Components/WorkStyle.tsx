@@ -31,7 +31,7 @@ export default function WorkInStyle() {
         id: item.id.toString(),
         img: item.img,
         title: item.title,
-        price: item.price,
+        price: Number(item.price),
       });
     }
   };

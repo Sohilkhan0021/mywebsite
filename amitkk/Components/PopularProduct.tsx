@@ -46,23 +46,22 @@ export default function AnmoleSection() {
         </div>
         <div className="relative w-full h-[220px] sm:h-[260px] lg:h-[320px] -ml-2 sm:-ml-6 lg:-ml-16">
           <Swiper
-            modules={[Autoplay]}
-            loop={true}
-            speed={3000}
-            spaceBetween={15}
+           modules={[Autoplay,]}
+            spaceBetween={20}
+            loop
+            speed={800}
             autoplay={{
-              delay: 0,
+              delay: 2000,
               disableOnInteraction: false,
               pauseOnMouseEnter: false,
             }}
             freeMode={{ enabled: true, momentum: false }}
-            freeModeMomentum={false}
-            loopedSlides={images.length}
             className="h-full w-full rounded-2xl overflow-hidden"
             breakpoints={{
-              320: { slidesPerView: 1.2 }, 
-              640: { slidesPerView: 2 }, 
-              1024: { slidesPerView: 2.5 } 
+              320: { slidesPerView: 1.2 },
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+              1280: { slidesPerView: 4 },
             }}
           >
             {images.concat(images).map((src, index) => (
