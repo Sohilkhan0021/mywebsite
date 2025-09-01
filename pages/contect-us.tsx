@@ -65,7 +65,7 @@ export default function Contact() {
           </div>
           <div className="relative w-full h-[250px] sm:h-[350px] md:h-[600px]">
             <Image
-              src="/images-new/contect-us.jpg"
+              src="/images/contect-us.jpg"
               alt="Contact Anmol Craft and Creation"
               fill
               className="object-cover shadow-md"
@@ -145,7 +145,7 @@ export default function Contact() {
           <div className="flex justify-center">
             <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-lg">
               <Image
-                src="/images-new/satyam-img.jpg"
+                src="/images/satyam-img.jpg"
                 alt="Let's Connect - Anmol Craft and Creation"
                 fill
                 className="object-cover"
