@@ -237,17 +237,14 @@ export default function Header() {
                     setCartSidebarOpen(false);
                     router.push(`/checkouts/cn/${checkoutId}`);
                   }}
-                  className="w-full bg-[#3e402d] text-white py-3 rounded hover:bg-[#63654f] cursor-pointer mt-4"
-                >
+                  className="w-full bg-[#3e402d] text-white py-3 rounded hover:bg-[#63654f] cursor-pointer mt-4">
                   Checkout All
                 </button>
                 <button
-                  onClick={() => {
-                    setCartSidebarOpen(false);
+                  onClick={() => {setCartSidebarOpen(false);
                     router.push("/cart");
                   }}
-                  className="w-full bg-[#3e402d] text-white py-3 rounded hover:bg-[#63654f] cursor-pointer mt-2"
-                >
+                  className="w-full bg-[#3e402d] text-white py-3 rounded hover:bg-[#63654f] cursor-pointer mt-2">
                   Go to Cart
                 </button>
               </div>
