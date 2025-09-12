@@ -41,7 +41,7 @@ export default function MetalCraft() {
         id: product.id,
         img: product.img,
         title: product.title,
-        price: Number(product.price.replace("₹", "")), 
+        price: Number(product.price.replace("₹", "")),
       });
     }
 
@@ -65,12 +65,12 @@ export default function MetalCraft() {
             data-aos-delay={index * 100}
           >
             <Link href={`/product/${product.id}`}>
-              <div className="cursor-pointer">
+              <div className="relative w-80 h-80 cursor-pointer">
                 <Image
                   src={product.img}
                   alt={product.title}
-                  width={320}    // Fixed width
-                  height={320}   // Fixed height
+                  width={320}
+                  height={320}
                   className="object-cover rounded-lg"
                 />
               </div>
