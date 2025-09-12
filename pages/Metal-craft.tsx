@@ -41,7 +41,7 @@ export default function MetalCraft() {
         id: product.id,
         img: product.img,
         title: product.title,
-        price: Number(product.price.replace("₹", "")), // convert ₹ to number
+        price: Number(product.price.replace("₹", "")), 
       });
     }
 
@@ -65,7 +65,7 @@ export default function MetalCraft() {
             data-aos-delay={index * 100}
           >
             <Link href={`/product/${product.id}`}>
-              <div className="relative w-80 h-100 cursor-pointer">
+              <div className="relative w-80 h-80 cursor-pointer">
                 <Image
                   src={product.img}
                   alt={product.title}
@@ -74,7 +74,7 @@ export default function MetalCraft() {
                 />
               </div>
             </Link>
-           <div
+            <div
               className="absolute top-3 right-3 p-2 cursor-pointer"
               onClick={() => toggleLike(product)}
             >
