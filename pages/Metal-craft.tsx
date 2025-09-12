@@ -65,11 +65,12 @@ export default function MetalCraft() {
             data-aos-delay={index * 100}
           >
             <Link href={`/product/${product.id}`}>
-              <div className="relative w-80 h-80 cursor-pointer">
+              <div className="cursor-pointer">
                 <Image
                   src={product.img}
                   alt={product.title}
-                  fill
+                  width={320}    // Fixed width
+                  height={320}   // Fixed height
                   className="object-cover rounded-lg"
                 />
               </div>
