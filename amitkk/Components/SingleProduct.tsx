@@ -60,6 +60,7 @@ export default function ProductDetails() {
             className="w-full max-w-sm md:max-w-md h-[40vh] md:h-[350px] lg:h-[400px] object-cover rounded-lg shadow-lg"
           />
           <div
+            
             className="absolute top-2 lg:right-20 cursor-pointer md:right-6 right-3  "
             onClick={toggleWishlist}
           >
@@ -72,7 +73,7 @@ export default function ProductDetails() {
         </div>
 
         <div
-          className="space-y-4 sm:space-y-6 order-2 lg:order-1 text-left"
+          className="space-y-4 sm:space-y-6 order-2 lg:order-1 "
           data-aos="fade-left"
         >
           <h1 className="text-2xl sm:text-3xl md:text-3xl font-bold text-gray-800">
