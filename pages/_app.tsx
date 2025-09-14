@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <WishlistProvider>
         <Header />
         <main className="w-full min-h-screen pt-4 bg-[#f9f4ee]">
-          <div className="mx-auto w-full px-4 sm:px-6 md:px-0">
+          <div className=" w-full">
             <Component {...pageProps} />
           </div>
         </main>
