@@ -60,8 +60,8 @@ export default function Header() {
 
   return (
     <>
-      <header className="bg-[#F9F2EA] shadow sticky top-0 z-50">
-        <div className="w-[85vw] mx-auto flex justify-between items-center py-4 px-2">
+      <header className="bg-[#F9F2EA] shadow fixed top-0 left-0 w-full z-50 ">
+        <div className="max-w-[1200px] w-full mx-auto px-4 sm:px-6 md:px-0 flex justify-between items-center py-4">
 
           <nav className="hidden md:flex items-center gap-8 text-[#7a7469] font-medium">
             <Link href="/">Home</Link>

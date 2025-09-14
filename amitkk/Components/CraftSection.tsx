@@ -31,9 +31,10 @@ export default function CraftSection() {
 
   return (
     <section className="bg-[#3e402d] text-white py-20">
-      <div className="w-[85%] mx-auto flex items-center justify-between">
-        <div className="max-w-[50%]">
-          <h2 className="text-4xl font-bold mb-4 leading-snug">
+      <div className="w-full px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between max-w-[1200px] mx-auto">
+        {/* Left Content */}
+        <div className="w-full md:w-1/2 mb-8 md:mb-0">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-snug">
             Explore a wide <br /> selection of craft forms
           </h2>
           <a
@@ -43,9 +44,14 @@ export default function CraftSection() {
             Learn More
           </a>
         </div>
-        <div ref={ref} className="text-center">
-          <div className="text-5xl font-bold">{count}</div>
-          <span className="block mt-2 tracking-widest text-sm">
+
+        {/* Right Content (Counter) */}
+        <div
+          ref={ref}
+          className="w-full md:w-1/2 flex flex-col items-center text-center"
+        >
+          <div className="text-4xl sm:text-5xl md:text-6xl font-bold">{count}</div>
+          <span className="block mt-2 tracking-widest text-sm sm:text-base">
             CRAFT FORMS
           </span>
         </div>

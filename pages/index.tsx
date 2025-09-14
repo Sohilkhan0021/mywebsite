@@ -21,6 +21,8 @@ import UserForm from "@/amitkk/Components/Explor";
 
 import { useWishlist } from "@/amitkk/context/WishlistContext";
 
+import { app, analytics } from "../firebase/firebaseConfig";
+
 const slides = [
   { id: "1", img: "/images/home-page-img-6.avif", title: "Discover Beautiful Crafts", subtitle: "Handmade with love and care" },
   { id: "2", img: "/images/home-page-img-2.webp", title: "New Arrivals for You", subtitle: "Explore our latest collection" },
@@ -43,17 +45,18 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="max-w-[85%] mx-auto mt-8">
+      {/* Hero Slider */}
+      <section className="w-full mt-12">
         <Swiper
           modules={[Pagination, Autoplay]}
           pagination={{ clickable: true }}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           loop
-          className="rounded-lg overflow-hidden"
+          className="h-[40vh] sm:h-[60vh] md:h-[75vh] lg:h-[90vh]"
         >
           {slides.map(({ img, title, subtitle, id }, index) => (
             <SwiperSlide key={index}>
-              <div className="relative h-[85vh] w-full bg-gray-100">
+              <div className="relative h-full w-full bg-gray-100">
                 <Image
                   src={img}
                   alt={title}
@@ -62,27 +65,27 @@ export default function HomePage() {
                   priority
                 />
                 <div
-                  className="absolute top-5 right-5 p-2 cursor-pointer z-20"
+                  className="absolute top-4 right-4 p-2 cursor-pointer z-20"
                   onClick={(e) => {
                     e.stopPropagation();
                     toggleLike({ id, img, title });
                   }}
                 >
-                  {liked[id] ? (
-                    <Heart className="w-6 h-6 text-white fill-white transition-colors duration-300" />
-                  ) : (
-                    <Heart className="w-6 h-6 text-white transition-colors duration-300" />
-                  )}
+                  <Heart
+                    className={`w-6 h-6 text-white transition-colors duration-300 ${liked[id] ? "fill-white" : ""}`}
+                  />
                 </div>
-                <div className="absolute inset-0 flex flex-col justify-center items-start">
-                  <div className="w-[85vw] mx-auto px-4 text-white">
-                    <h2 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
+                <div className="absolute inset-0 flex flex-col justify-center items-center sm:items-start px-4 sm:px-8">
+                  <div className="text-center sm:text-left max-w-xl">
+                    <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-2 sm:mb-4 drop-shadow-lg">
                       {title}
                     </h2>
-                    <p className="text-lg md:text-2xl mb-8 drop-shadow-md">{subtitle}</p>
+                    <p className="text-xs sm:text-lg md:text-xl mb-3 sm:mb-6 drop-shadow-md">
+                      {subtitle}
+                    </p>
                     <Link
                       href={`/product/${id}`}
-                      className="bg-teal-700 hover:bg-teal-800 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition"
+                      className="inline-block bg-teal-700 hover:bg-teal-800 text-white font-semibold py-1.5 px-4 sm:py-3 sm:px-6 rounded-lg shadow-lg transition text-sm sm:text-base"
                     >
                       Shop Now
                     </Link>
@@ -94,14 +97,17 @@ export default function HomePage() {
         </Swiper>
       </section>
 
-      <Category />
-      <PopularProduct />
-      <SingleProduct />
-      <MetalProduct />
-      <Slider />
-      <CraftSection />
-      <WorkStyle />
-      <UserForm />
+      {/* Main Sections */}
+      <div className="max-w-[90%] mx-auto mt-12 space-y-12">
+        <Category />
+        <PopularProduct />
+        <SingleProduct />
+        <MetalProduct />
+        <Slider />
+        <CraftSection />
+        <WorkStyle />
+        <UserForm />
+      </div>
     </>
   );
 }

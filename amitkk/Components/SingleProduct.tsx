@@ -24,8 +24,10 @@ export default function ProductDetails() {
 
   useEffect(() => {
     AOS.init({
-      duration: 1000,
-      once: false,
+      duration: 1200,
+      once: true,
+      easing: "ease-in-out",
+      mirror: false,
     });
   }, []);
 
@@ -39,7 +41,7 @@ export default function ProductDetails() {
         id: item.id,
         img: item.img,
         title: item.title,
-        price: Number(item.price.replace("$", "")), 
+        price: Number(item.price.replace("$", "")),
       });
     }
     setLiked((prev) => !prev);
@@ -47,16 +49,18 @@ export default function ProductDetails() {
 
   return (
     <section className="bg-[#fdf8f4] py-12">
-      <div className="w-[85%] mx-auto flex flex-col md:flex-row items-center gap-8">
-        
-        <div className="flex-1 flex justify-center relative" data-aos="fade-right">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div
+          className="flex justify-center relative order-1 lg:order-2"
+          data-aos="fade-right"
+        >
           <img
             src={item.img}
             alt={item.title}
-            className="w-full h-150 max-w-md rounded-lg shadow-lg"
+            className="w-full max-w-sm md:max-w-md h-auto md:h-[350px] lg:h-[400px] object-cover rounded-lg shadow-lg"
           />
           <div
-            className="absolute top-2 right-23 p-2 cursor-pointer"
+            className="absolute top-2 right-2 sm:right-3 lg:right-10 p-2 cursor-pointer z-10"
             onClick={toggleWishlist}
           >
             {liked ? (
@@ -67,12 +71,21 @@ export default function ProductDetails() {
           </div>
         </div>
 
-        <div className="flex-1 text-left space-y-6" data-aos="fade-left">
-          <h1 className="text-3xl font-bold text-gray-800">{item.title}</h1>
-          <p className="text-gray-600 leading-relaxed">{item.subtitle}</p>
-          <div className="text-2xl font-semibold text-[#3e402d]">{item.price}</div>
+        <div
+          className="space-y-4 sm:space-y-6 order-2 lg:order-1 text-left"
+          data-aos="fade-left"
+        >
+          <h1 className="text-2xl sm:text-3xl md:text-3xl font-bold text-gray-800">
+            {item.title}
+          </h1>
+          <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+            {item.subtitle}
+          </p>
+          <div className="text-xl sm:text-2xl font-semibold text-[#3e402d]">
+            {item.price}
+          </div>
 
-          <ul className="list-disc list-inside text-gray-700 space-y-2">
+          <ul className="list-disc list-inside text-gray-700 text-sm sm:text-base space-y-1 sm:space-y-2">
             <li>Material: Eco-friendly Jute</li>
             <li>Size: Medium (12in x 8in)</li>
             <li>Category: {item.category}</li>
@@ -80,7 +93,7 @@ export default function ProductDetails() {
           </ul>
 
           <Link href={`/product/${item.id}`}>
-            <button className="bg-[#3e402d] text-white px-6 py-3 font-semibold cursor-pointer shadow hover:bg-[#4b4d36] transition">
+            <button className="bg-[#3e402d] text-white px-5 sm:px-6 py-2 sm:py-3 font-semibold cursor-pointer shadow hover:bg-[#4b4d36] transition">
               Buy Now
             </button>
           </Link>
