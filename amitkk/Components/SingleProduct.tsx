@@ -49,18 +49,18 @@ export default function ProductDetails() {
 
   return (
     <section className="bg-[#fdf8f4] py-12">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
         <div
-          className="flex justify-center relative order-1 lg:order-2"
+          className="flex justify-center md:justify-start relative order-1 lg:order-2 "
           data-aos="fade-right"
         >
           <img
             src={item.img}
             alt={item.title}
-            className="w-full max-w-sm md:max-w-md h-auto md:h-[350px] lg:h-[400px] object-cover rounded-lg shadow-lg"
+            className="w-full max-w-sm md:max-w-md h-[40vh] md:h-[350px] lg:h-[400px] object-cover rounded-lg shadow-lg"
           />
           <div
-            className="absolute top-2 right-2 sm:right-3 lg:right-10 p-2 cursor-pointer z-10"
+            className="absolute top-2 lg:right-20 cursor-pointer md:right-6 right-3  "
             onClick={toggleWishlist}
           >
             {liked ? (

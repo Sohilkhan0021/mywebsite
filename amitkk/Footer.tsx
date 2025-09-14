@@ -33,8 +33,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row flex-1 justify-between gap-10">
-          {/* The Company */}
+        <div className="flex flex-col sm:flex-row flex-1 justify-between gap-3">
           <div className="w-full sm:w-auto">
             <div className="flex justify-between items-center sm:block">
               <h3 className="text-lg font-semibold mb-3">The Company</h3>
@@ -72,7 +71,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Orders & Support */}
           <div className="w-full sm:w-auto">
             <div className="flex justify-between items-center sm:block">
               <h3 className="text-lg font-semibold mb-3">Orders & Support</h3>
@@ -117,8 +115,6 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
-          {/* Social Media */}
           <div className="w-full sm:w-auto">
             <div className="flex justify-between items-center sm:block">
               <h3 className="text-lg font-semibold mb-3">Social Media</h3>

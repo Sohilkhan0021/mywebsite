@@ -45,7 +45,6 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero Slider */}
       <section className="w-full mt-12">
         <Swiper
           modules={[Pagination, Autoplay]}
@@ -96,8 +95,6 @@ export default function HomePage() {
           ))}
         </Swiper>
       </section>
-
-      {/* Main Sections */}
       <div className="max-w-[100%] mx-auto mt-12 space-y-12">
         <Category />
         <PopularProduct />
