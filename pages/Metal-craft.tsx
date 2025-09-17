@@ -86,9 +86,9 @@ export default function MetalCraft() {
                 <Heart className="w-6 h-6 text-white" />
               )}
             </div>
-            <div className="px-3 pt-1 pb-3 text-center mt-3">
-              <h2 className="text-lg font-semibold text-black">{product.title}</h2>
-              <p className="text-[#3e402d] font-bold mt-1">{product.price}</p>
+            <div className="px-3 pt-1 pb-3 text-center mt-4">
+              <h2 className="text-base font-semibold text-black mt-2">{product.title}</h2>
+              <p className="text-base text-[#3e402d] font-bold mt-1">{product.price}</p>
             </div>
           </div>
         ))}

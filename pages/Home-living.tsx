@@ -56,7 +56,7 @@ export default function MetalCraft() {
       <h1 className="text-3xl font-bold text-[#3e402d] mb-8 text-center">
         Anmole Metal Craft Products
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 justify-items-center">
         {homelivingProducts.map((product, index) => (
           <div
             key={product.id}
@@ -65,25 +65,30 @@ export default function MetalCraft() {
             data-aos-delay={index * 100}
           >
             <Link href={`/product/${product.id}`}>
-              <div className="relative w-80 h-100 cursor-pointer">
+              <div className="relative w-36 h-36 sm:w-48 sm:h-48 md:w-72 md:h-72 cursor-pointer">
                 <Image
                   src={product.img}
                   alt={product.title}
                   fill
                   className="object-cover rounded-lg"
                 />
+                {/* Heart inside image container */}
+                <div
+                  className="absolute top-2 right-2 p-1 cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault(); // prevent link trigger
+                    toggleLike(product);
+                  }}
+                >
+                  {likedItems[product.id] ? (
+                    <Heart className="w-6 h-6 fill-white text-white" />
+                  ) : (
+                    <Heart className="w-6 h-6 text-white" />
+                  )}
+                </div>
               </div>
             </Link>
-           <div
-              className="absolute top-3 right-3 p-2 cursor-pointer"
-              onClick={() => toggleLike(product)}
-            >
-              {likedItems[product.id] ? (
-                <Heart className="w-6 h-6 fill-white text-white" />
-              ) : (
-                <Heart className="w-6 h-6 text-white" />
-              )}
-            </div>
+
             <div className="mt-4 px-3 pb-4 text-center">
               <h2 className="text-lg font-semibold text-black">
                 {product.title}
