@@ -115,7 +115,7 @@ const product = allProducts.find((p) => p.id === id);
 
   return (
     <div className="w-[90%] md:w-[85%] mx-auto px-4 md:px-6 py-8">
-      <div className="flex flex-col md:flex-row gap-8">
+      <div className="flex flex-col md:flex-row gap-8 mt-4">
         <img
           src={product.img}
           alt={product.title}

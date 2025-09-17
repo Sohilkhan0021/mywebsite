@@ -31,8 +31,6 @@ export default function AnmoleSection() {
   return (
     <section className="relative w-full bg-gradient-to-r from-[#fdf6ec] to-[#f5faff] py-12 sm:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
-
-       
         <div className="relative w-full h-[220px] sm:h-[260px] lg:h-[320px] order-1 lg:order-2">
           <Swiper
             modules={[Autoplay]}
