@@ -43,7 +43,7 @@ export default function CraftSwiper() {
   const categories = ["All", "Decor", "DIY Kit", "Home", "Jewelry"];
 
   return (
-    <section className="bg-[#fdf8f4] py-12">
+    <section className="bg-[#fdf8f4] py-8">
       <div className="max-w-[95%] sm:max-w-[90%] md:max-w-[85%] lg:max-w-[1200px] mx-auto text-center">
         <div className="flex flex-wrap justify-center mb-8 gap-2 ">
           {categories.map((name, idx) => (
@@ -64,7 +64,7 @@ export default function CraftSwiper() {
 
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
-          navigation
+          // navigation
           pagination={{ clickable: true }}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           loop

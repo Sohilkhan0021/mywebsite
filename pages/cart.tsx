@@ -7,7 +7,7 @@ export default function CartPage() {
   const router = useRouter();
 
   if (cart.length === 0) {
-    return <h2 className="text-center mt-20 text-2xl">Your cart is empty 🛒</h2>;
+    return <h2 className="text-center text-[#fdf8f4] mt-20 text-2xl ">Your cart is empty 🛒</h2>;
   }
 
   const subtotal = cart.reduce(

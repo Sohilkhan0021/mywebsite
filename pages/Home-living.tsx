@@ -56,16 +56,16 @@ export default function MetalCraft() {
       <h1 className="text-3xl font-bold text-[#3e402d] mb-8 text-center">
         Anmole Metal Craft Products
       </h1>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 justify-items-center">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-2 lg:gap-6 justify-items-center">
         {homelivingProducts.map((product, index) => (
           <div
             key={product.id}
-            className="overflow-hidden relative"
+            className="flex flex-col justify-items-center mx-1"
             data-aos="fade-down"
             data-aos-delay={index * 100}
           >
             <Link href={`/product/${product.id}`}>
-              <div className="relative w-36 h-36 sm:w-48 sm:h-48 md:w-72 md:h-72 cursor-pointer">
+              <div className="overflow-hidden relative w-36 h-36 sm:w-48 sm:h-48 md:w-72 md:h-72 cursor-pointer text-center">
                 <Image
                   src={product.img}
                   alt={product.title}
@@ -89,7 +89,7 @@ export default function MetalCraft() {
               </div>
             </Link>
 
-            <div className="mt-4 px-3 pb-4 text-center">
+            <div className="mt-4 md:px-3 pb-4 ">
               <h2 className="text-lg font-semibold text-black">
                 {product.title}
               </h2>

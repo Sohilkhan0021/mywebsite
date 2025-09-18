@@ -56,17 +56,17 @@ export default function MetalCraft() {
       <h1 className="text-3xl font-bold text-[#3e402d] mb-8 text-center">
         Anmole Metal Craft Products
       </h1>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-8 justify-items-center">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-8 justify-center item-center">
         {metalCraftProducts.map((product, index) => (
           <div
             key={product.id}
-            className="overflow-hidden relative w-full max-w-[250px] md:w-80"
+            className="w-full max-w-[250px] md:w-80"
             data-aos="fade-down"
             data-aos-delay={index * 100}
           >
             <Link href={`/product/${product.id}`}>
               {/* Responsive image height */}
-              <div className="relative w-full h-[180px] sm:h-64 md:h-80 cursor-pointer">
+              <div className="relative overflow-hidden w-full h-[180px] sm:h-64 md:h-80 cursor-pointer">
                 <Image
                   src={product.img}
                   alt={product.title}
@@ -86,7 +86,7 @@ export default function MetalCraft() {
                 <Heart className="w-6 h-6 text-white" />
               )}
             </div>
-            <div className="px-3 pt-1 pb-3 text-center mt-4">
+            <div className="md:px-3 pt-1 pb-3 text-center md:mt-4">
               <h2 className="text-base font-semibold text-black mt-2">{product.title}</h2>
               <p className="text-base text-[#3e402d] font-bold mt-1">{product.price}</p>
             </div>
