@@ -51,7 +51,7 @@ export default function ProductDetails() {
     <section className="bg-[#fdf8f4] py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
         <div
-          className="flex justify-center md:justify-start relative order-1 lg:order-2 "
+          className="flex justify-start md:justify-start relative order-1 lg:order-2 "
           data-aos="fade-right"
         >
           <img
