@@ -37,7 +37,7 @@ export default function LoginPage({ onClose }: props) {
         toast.success(data.message || "Login successful!");
         setTimeout(() => {
           router.push("/");
-        }, 1500);
+        }, 1000);
       } else {
         toast.error(data.message || "Login failed. Please try again.");
       }

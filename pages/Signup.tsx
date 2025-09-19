@@ -32,7 +32,7 @@ export default function SignupPage() {
         toast.success("Signup successful!");
         setTimeout(() => {
           router.push("/login");
-        }, 1500);
+        }, 1000);
       } else {
         const data = await res.json();
         toast.error(data.message || "Signup failed. Please try again.");
