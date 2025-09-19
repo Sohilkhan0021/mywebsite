@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
+import { Toaster } from "react-hot-toast";
 import Header from "@/amitkk/Header";
 import Footer from "@/amitkk/Footer";
 import { CartProvider } from "@/amitkk/context/CartContext";
@@ -11,6 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <WishlistProvider>
         <Header />
         <main className="w-full min-h-screen pt-4 bg-[#f9f4ee]">
+        <Toaster position="top-right" reverseOrder={false} />
           <div className="w-full">
             <Component {...pageProps} />
           </div>
