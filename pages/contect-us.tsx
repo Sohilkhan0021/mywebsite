@@ -65,7 +65,7 @@ export default function Contact() {
           </div>
           <div className="relative w-full h-[250px] sm:h-[350px] md:h-[600px]">
             <Image
-              src="/images/contect-us.jpg"
+              src="/images/contect-su_11.jpg"
               alt="Contact Anmol Craft and Creation"
               fill
               className="object-cover shadow-md"
