@@ -4,11 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build", 
     "start": "next start",
     "lint": "eslint",
-    "deploy": "netlify deploy",
-    "export": "next export",
+    "deploy": "firebase deploy",
     "git": "git add . && git commit -m \"auto commit\" && git push origin main"
   },
   "dependencies": {

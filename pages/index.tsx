@@ -95,8 +95,6 @@ export default function HomePage() {
           ))}
         </Swiper>
       </section>
-
-      {/* Main Sections */}
       <div className="max-w-[100%] mx-auto md:space-y-12">
         <Category />
         <PopularProduct />

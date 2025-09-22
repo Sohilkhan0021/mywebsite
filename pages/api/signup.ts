@@ -1,14 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import bcrypt from "bcryptjs";
 import mongoose from "mongoose";
-
-const MONGODB_URI =
-  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/anmolji";
-
-if (!mongoose.connection.readyState) {
-  await mongoose.connect(MONGODB_URI, { dbName: "anmolji" });
-}
-
+import dbConnect from "../../lib/mongodb";
 
 const UserSchema = new mongoose.Schema(
   {
@@ -22,13 +15,12 @@ const UserSchema = new mongoose.Schema(
 
 const User = mongoose.models.User || mongoose.model("User", UserSchema);
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
+
+  await dbConnect(); // 👈 yaha db connect karna hoga
 
   try {
     const { firstName, lastName, email, password } = req.body;
@@ -51,12 +43,9 @@ export default async function handler(
       password: hashedPassword,
     });
 
-    return res
-      .status(201)
-      .json({ message: "User created successfully", user: newUser });
-  } catch (error: unknown) {
-  console.error(error);
-  res.status(500).json({ message: "Something went wrong" });
-}
-
+    return res.status(201).json({ message: "User created successfully", user: newUser });
+  } catch (error) {
+    console.error("Signup error:", error);
+    res.status(500).json({ message: "Something went wrong" });
+  }
 }
