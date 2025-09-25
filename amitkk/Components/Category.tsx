@@ -67,7 +67,7 @@ export default function CraftSwiper() {
         </div>
 
         <Swiper
-          modules={[Navigation, Autoplay]}
+          modules={[Autoplay]}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           loop
           spaceBetween={20}
