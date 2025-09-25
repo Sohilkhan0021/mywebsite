@@ -95,7 +95,7 @@ export default function ProductDetails() {
 
           <Link href={`/product/${item.id}`}>
             <button className="bg-[#3e402d] text-white px-5 sm:px-6 py-2 sm:py-3 font-semibold cursor-pointer shadow hover:bg-[#4b4d36] transition">
-              Buy Now
+              Buy Now111
             </button>
           </Link>
         </div>
