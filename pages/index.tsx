@@ -52,7 +52,6 @@ export default function HomePage() {
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           loop
           className="h-[40vh] sm:h-[60vh] md:h-[75vh] lg:h-[90vh]"
-          
         >
           {slides.map(({ img, title, subtitle, id }, index) => (
             <SwiperSlide key={index}>
@@ -86,8 +85,7 @@ export default function HomePage() {
                     </p>
                     <Link
                       href={`/product/${id}`}
-                      className="inline-block bg-teal-700 hover:bg-teal-800 text-white font-semibold py-1.5 px-4 sm:py-3 sm:px-6 rounded-lg shadow-lg transition text-sm sm:text-base"
-                    >
+                      className="inline-block bg-teal-700 hover:bg-teal-800 text-white font-semibold py-1.5 px-4 sm:py-3 sm:px-6 rounded-lg shadow-lg transition text-sm sm:text-base">
                       Shop Now
                     </Link>
                   </div>
