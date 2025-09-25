@@ -8,6 +8,8 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useRouter } from "next/navigation";
+
 
 const craftProducts = [
   { id: 101, img: "/images/home-page-img-6.avif", titleamt: "$250", type: "Handmade Decorative Item", category: "Decor", amt: "$250" },
@@ -42,6 +44,8 @@ export default function CraftSwiper() {
 
   const categories = ["All", "Decor", "DIY Kit", "Home", "Jewelry"];
 
+  const router = useRouter();
+
   return (
     <section className="bg-[#fdf8f4] py-8">
       <div className="max-w-[95%] sm:max-w-[90%] md:max-w-[85%] lg:max-w-[1200px] mx-auto text-center">
@@ -63,9 +67,7 @@ export default function CraftSwiper() {
         </div>
 
         <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          // navigation
-          pagination={{ clickable: true }}
+          modules={[Navigation, Autoplay]}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           loop
           spaceBetween={20}
@@ -83,6 +85,7 @@ export default function CraftSwiper() {
                   src={item.img}
                   alt={item.type}
                   className="w-full h-56 sm:h-72 md:h-80 lg:h-80 object-cover"
+                  onClick={() => router.push(`/product/${item.id}`)}
                 />
                 <div
                   className="absolute top-3 right-3 p-2 cursor-pointer z-10"
@@ -94,7 +97,7 @@ export default function CraftSwiper() {
                     <Heart className="w-6 h-6 text-white" />
                   )}
                 </div>
-                <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-60 transition-opacity duration-300 flex flex-col justify-center items-center text-white px-4">
+                <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-60 transition-opacity duration-300 flex flex-col md:flex hidden justify-center items-center text-white px-4">
                   <h3 className="text-sm sm:text-lg font-bold py-1 sm:py-2">{item.type}</h3>
                   <h2 className="text-lg sm:text-2xl mb-2">{item.amt}</h2>
                   <Link href={`/product/${item.id}`}>
