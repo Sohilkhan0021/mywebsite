@@ -62,6 +62,7 @@ export default function HomePage() {
                   fill
                   className="object-cover brightness-75"
                   priority
+                  unoptimized
                 />
                 <div
                   className="absolute top-4 right-4 p-2 cursor-pointer z-20"
