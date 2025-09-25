@@ -21,7 +21,7 @@ import UserForm from "@/amitkk/Components/Explor";
 
 import { useWishlist } from "@/amitkk/context/WishlistContext";
 
-import { app, analytics } from "../firebase/firebaseConfig";
+
 
 const slides = [
   { id: "1", img: "/images/home-page-img-6.avif", title: "Discover Beautiful Crafts", subtitle: "Handmade with love and care" },
