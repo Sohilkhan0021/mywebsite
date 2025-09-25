@@ -52,6 +52,7 @@ export default function HomePage() {
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           loop
           className="h-[40vh] sm:h-[60vh] md:h-[75vh] lg:h-[90vh]"
+          
         >
           {slides.map(({ img, title, subtitle, id }, index) => (
             <SwiperSlide key={index}>
@@ -62,6 +63,7 @@ export default function HomePage() {
                   fill
                   className="object-cover brightness-75"
                   priority
+                  unoptimized
                 />
                 <div
                   className="absolute top-4 right-4 p-2 cursor-pointer z-20"
