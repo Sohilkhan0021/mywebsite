@@ -20,7 +20,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).json({ message: "Method not allowed" });
   }
 
-  await dbConnect(); // 👈 yaha bhi db connect kar
+  await dbConnect(); 
 
   try {
     const { email, password } = req.body;
@@ -39,7 +39,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(400).json({ message: "Invalid credentials" });
     }
 
-    return res.status(200).json({ message: "Login successful", redirect: "/" });
+    // return res.status(200).json({ message: "Login successful", redirect: "/" });
+   return res.status(200).json({
+  message: "Login successful",
+  user: {
+    name: user.firstName || user.email.split("@")[0],
+    email: user.email,
+    role: user.role || "user",
+  },
+  token: "dummy-token"
+});
+
+
   } catch (error) {
     console.error("Login error:", error);
     res.status(500).json({ message: "Something went wrong" });

@@ -19,16 +19,26 @@ export default function Header() {
   const cartCount = cart.length;
   const { wishlist } = useWishlist();
 
-  useEffect(() => {
+
+
+useEffect(() => {
+  const handleStorageChange = () => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
-      try {
-        setUser(JSON.parse(storedUser));
-      } catch {
-        setUser(null);
-      }
+      setUser(JSON.parse(storedUser));
+    } else {
+      setUser(null);
     }
-  }, []);
+  };
+
+  window.addEventListener("storage", handleStorageChange);
+  handleStorageChange(); 
+
+  return () => {
+    window.removeEventListener("storage", handleStorageChange);
+  };
+}, []);
+
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -77,14 +87,14 @@ export default function Header() {
           </button>
           <div className="flex items-center gap-6 text-[#4E5036]">
             {!user ? (
-              <Link href="/login" className="hover:underline text-[#4E5036]">
+              <Link href="/login" className="hover:underline text-[#4E5036] cursor-pointer">
                 Login
               </Link>
             ) : (
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={() => setDropdownOpen((prev) => !prev)}
-                  className="w-8 h-8 rounded-full bg-white text-[#4E5036] flex items-center justify-center font-bold"
+                  className="w-8 h-8 rounded-full bg-white text-[#4E5036] flex items-center justify-center font-bold cursor-pointer"
                 >
                   {user.name?.charAt(0).toUpperCase() || "U"}
                 </button>
@@ -95,7 +105,7 @@ export default function Header() {
                         setDropdownOpen(false);
                         router.push("/profile");
                       }}
-                      className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+                      className="block w-full text-left px-4 py-2 hover:bg-gray-100 cursor-pointer"
                     >
                       Your Profile
                     </button>
@@ -104,7 +114,7 @@ export default function Header() {
                         setDropdownOpen(false);
                         handleLogout();
                       }}
-                      className="block w-full text-left px-4 py-2 hover:bg-gray-100 text-red-500"
+                      className="block w-full text-left px-4 py-2 hover:bg-gray-100 text-red-500 cursor-pointer"
                     >
                       Logout
                     </button>

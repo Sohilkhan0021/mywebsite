@@ -3,7 +3,6 @@
 export default function OurStory() {
   return (
     <>
-      {/* Top Section */}
       <section className="bg-[#3e402d] text-white py-20">
         <div className="w-[85%] mx-auto">
           <div className="max-w-full md:max-w-[50%]">
@@ -14,8 +13,6 @@ export default function OurStory() {
           </div>
         </div>
       </section>
-
-      {/* Middle Section */}
       <section className="bg-[#f7f0e9] py-16">
         <div className="w-[85vw] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
@@ -43,8 +40,6 @@ export default function OurStory() {
           </div>
         </div>
       </section>
-
-      {/* Bottom Section */}
       <section className="bg-[#F8FCE6] py-16">
         <div className="w-[85vw] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>

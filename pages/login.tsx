@@ -34,11 +34,12 @@ export default function LoginPage({ onClose }: props) {
       const data = await res.json();
 
       if (res.ok) {
-        toast.success(data.message || "Login successful!");
-        setTimeout(() => {
-          router.push("/");
-        }, 1000);
-      } else {
+      localStorage.setItem("user", JSON.stringify(data.user));
+      localStorage.setItem("token", data.token || "");
+      toast.success(data.message || "Login successful!");
+      window.dispatchEvent(new Event("storage"));
+      router.push("/"); 
+    } else {
         toast.error(data.message || "Login failed. Please try again.");
       }
     } catch (error) {
@@ -58,9 +59,7 @@ export default function LoginPage({ onClose }: props) {
             <label className="text-xs tracking-widest text-[#3E402D] mb-2">
               EMAIL ADDRESS*
             </label>
-            <input
-              type="email"
-              value={email}
+            <input type="email" value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="text-[#3E402D] border-b border-black focus:outline-none focus:border-[#3E402D] py-2 text-sm"
               required

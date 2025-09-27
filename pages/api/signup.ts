@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import bcrypt from "bcryptjs";
 import mongoose from "mongoose";
 import dbConnect from "../../lib/mongodb";
+import { sendWelcomeEmail } from "../../lib/mailer";
 
 const UserSchema = new mongoose.Schema(
   {
@@ -20,7 +21,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).json({ message: "Method not allowed" });
   }
 
-  await dbConnect(); // 👈 yaha db connect karna hoga
+  await dbConnect(); 
 
   try {
     const { firstName, lastName, email, password } = req.body;
@@ -43,7 +44,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       password: hashedPassword,
     });
 
-    return res.status(201).json({ message: "User created successfully", user: newUser });
+    await sendWelcomeEmail(email, firstName);
+    // return res.status(201).json({ message: "User created successfully", user: newUser });
+    return res.status(201).json({ message: "User created successfully, email sent", user: newUser });
   } catch (error) {
     console.error("Signup error:", error);
     res.status(500).json({ message: "Something went wrong" });
