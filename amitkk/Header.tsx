@@ -72,7 +72,6 @@ useEffect(() => {
     <>
       <header className="bg-[#F9F2EA] shadow fixed top-0 left-0 w-full z-50 ">
         <div className="max-w-[1200px] w-full mx-auto px-4 sm:px-6 md:px-2 flex justify-between items-center py-4">
-
           <nav className="hidden md:flex items-center lg:gap-8 md:gap-4 text-[#7a7469] font-medium">
             <Link href="/">Home</Link>
             <Link href="/">Shop</Link>

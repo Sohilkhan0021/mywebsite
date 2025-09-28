@@ -20,7 +20,7 @@ export default function ProfilePage() {
         setUser({
           name: parsedUser.name,
           email: parsedUser.email,
-          country: "India", 
+          country: "India",
         });
       } catch {
         setUser(null);
@@ -30,54 +30,65 @@ export default function ProfilePage() {
 
   if (!user) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-[#FAF7F2]">
         <p className="text-lg">Please login to view your profile.</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#FAF7F2] pt-24 px-4 sm:px-6 md:px-12 lg:px-24">
-        <div className="bg-[#46412B]">
-            <h1 className="text-3xl md:text-4xl font-serif text-white mb-8">
-                Welcome {user.name}.
-            </h1>
-        </div>
 
-    
-      <section className="mb-8">
-        <h2 className="text-xl text-[#3E402D] font-semibold mb-4">Personal Information</h2>
-        <div className="text-sm text-[#3E402D] space-y-2">
-          <div className="mt-8">
-            <span className="block text-xs tracking-widest mb-1">YOUR NAME</span>
-            <span className="text-xl font-semibold">{user.name}</span>
+    <>
+      <div className="bg-[#46412B] h-40 w-full flex justify-center items-center px-8">
+        <div className="mt-8">
+          <h1 className="text-3xl md:text-4xl font-serif text-white ">
+          Welcome {user.name}.
+        </h1>
+        </div>
+      </div>
+    <div className="min-h-screen bg-[#FAF7F2] pt-20 px-4 sm:px-6 md:px-12 lg:px-24 mx-auto w-full">
+      <section className="mb-10 ">
+        <h2 className="text-2xl md:text-3xl font-serif text-[#3E402D] mb-6">
+          Personal Information
+        </h2>
+        <div className="text-sm text-[#3E402D]">
+          <div className="mt-6">
+            <span className="block text-xs uppercase tracking-widest mb-1 text-gray-600">
+              Your Name
+            </span>
+            <span className="text-lg">{user.name}</span>
           </div>
-          <div className="mt-8">
-            <span className="block text-xs tracking-widest mb-1">EMAIL ADDRESS</span>
-            <span className="text-xl font-semibold">{user.email}</span>
+          <div className="mt-6">
+            <span className="block text-xs uppercase tracking-widest mb-1 text-gray-600">
+              Email Address
+            </span>
+            <span className="text-lg">{user.email}</span>
           </div>
         </div>
         <hr className="my-6 border-gray-300" />
       </section>
-
-   
-      <section className="mb-8">
-        <h2 className="text-xl text-[#3E402D] font-semibold mb-4">Order History</h2>
-        <div className="bg-[#FAF7F2] text-gray-600 text-center py-2 px-4 rounded">
+      <section className="mb-10">
+        <h2 className="text-2xl md:text-3xl font-serif text-[#3E402D] mb-6">
+          Order History
+        </h2>
+        <div className="bg-[#FAF7F2] text-gray-600 text-center py-3 px-4 border rounded-sm">
           You haven't placed any orders yet.
         </div>
         <hr className="my-6 border-gray-300" />
       </section>
-      <section className="mb-8">
-        <h2 className="text-xl text-[#3E402D] font-semibold mb-4">Account Details</h2>
-        <p className="text-[#3E402D]">{user.country}</p>
+      <section className="mb-10">
+        <h2 className="text-2xl md:text-3xl font-serif text-[#3E402D] mb-6">
+          Account Details
+        </h2>
+        <p className="text-lg text-[#3E402D]">{user.country}</p>
         <button
           onClick={() => router.push("/addresses")}
-          className="mt-4 bg-[#3E402D] text-white px-4 py-2 rounded hover:bg-[#63654f]"
+          className="mt-6 bg-[#3E402D] text-white px-6 py-2 font-medium hover:bg-[#5c5f45] transition"
         >
-          View Addresses 1
+          View Addresses
         </button>
       </section>
     </div>
+    </>
   );
 }
