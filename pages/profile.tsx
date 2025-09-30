@@ -37,7 +37,6 @@ export default function ProfilePage() {
   }
 
   return (
-
     <>
       <div className="bg-[#46412B] h-40 w-full flex justify-center items-center px-8">
         <div className="mt-8">

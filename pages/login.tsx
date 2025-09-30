@@ -77,9 +77,12 @@ export default function LoginPage({ onClose }: props) {
               className="text-[#3E402D] border-b border-black focus:outline-none focus:border-[#3E402D] py-2 text-sm bg-transparent"
               required
             />
-            <span className="mt-2 text-xs text-[#3E402D] cursor-pointer hover:underline self-end">
+            <span
+              onClick={() => router.push("/forgot-password")}
+              className="mt-2 text-xs text-[#3E402D] cursor-pointer hover:underline self-end">
               Forgot password?
             </span>
+
           </div>
 
           <button

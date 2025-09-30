@@ -1,14 +1,9 @@
 "use client";
 import Image from "next/image";
 import { Phone } from "lucide-react";
+import toast, { Toaster } from "react-hot-toast";
 import Link from "next/link";
-import {
-  FaFacebook,
-  FaInstagram,
-  FaPinterest,
-  FaLinkedin,
-  FaGithub,
-} from "react-icons/fa";
+import {FaFacebook,FaInstagram,FaLinkedin,FaGithub,} from "react-icons/fa";
 
 export default function Contact() {
   return (
@@ -82,8 +77,31 @@ export default function Contact() {
               </h2>
               <div className="w-24 md:w-36 h-[2px] bg-[#a67c52]"></div>
             </div>
+            <form
+              className="space-y-6"
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const formData = {
+                  name: (e.currentTarget.elements[0] as HTMLInputElement).value,
+                  email: (e.currentTarget.elements[1] as HTMLInputElement).value,
+                  phone: (e.currentTarget.elements[2] as HTMLInputElement).value,
+                  country: (e.currentTarget.elements[3] as HTMLInputElement).value,
+                  message: (e.currentTarget.elements[4] as HTMLTextAreaElement).value,
+                };
 
-            <form className="space-y-6">
+                const res = await fetch("/api/contact", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify(formData),
+                });
+
+                if (res.ok) {
+                  toast.success("Your message has been sent!");
+                } else {
+                  toast.error("Something went wrong, please try again.");
+                }
+              }}
+            >
               <div>
                 <label className="block text-[#2e2f1e] text-base md:text-lg mb-2">
                   Your Name
