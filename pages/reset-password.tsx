@@ -19,7 +19,7 @@ export default function ResetPasswordPage() {
     }
   }, [token]);
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (password !== confirm) return alert("Passwords do not match");
 

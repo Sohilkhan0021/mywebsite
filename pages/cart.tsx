@@ -7,16 +7,14 @@ export default function CartPage() {
   const router = useRouter();
 
   if (cart.length === 0) {
-    return <h2 className="text-center text-[#fdf8f4] mt-20 text-2xl ">Your cart is empty 🛒</h2>;
+    return <h2 className="text-center text-black mt-20 text-2xl ">Your cart is empty 🛒</h2>;
   }
 
   const subtotal = cart.reduce(
-    (sum, item) => sum + Number(item.price) * item.quantity,
-    0
-  );
+    (sum, item) => sum + Number(item.price) * item.quantity, 0);
 
   return (
-    <div className="w-[85%] mx-auto py-12 flex flex-col lg:flex-row gap-12">
+    <div className="w-[85%] mx-auto py-12 flex flex-col lg:flex-row gap-12 mt-8">
       <div className="flex-1 space-y-8">
         {cart.map((item) => (
           <div key={item.id} className="flex gap-6 border-b border-gray-300 pb-6">
@@ -29,7 +27,7 @@ export default function CartPage() {
             </div>
             <div className="flex flex-col justify-between flex-1 text-black">
               <div>
-                <h3 className="text-lg font-semibold">{item.title}</h3>
+                <h3 className="text-base sm:text-lg font-semibold break-words">{item.title}</h3>
                 {item.subtitle && (
                   <p className="text-sm text-gray-500">{item.subtitle}</p>
                 )}

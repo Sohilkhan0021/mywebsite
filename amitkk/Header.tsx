@@ -159,19 +159,14 @@ useEffect(() => {
       >
         <div className="flex justify-between items-center px-4 py-3 border-b border-gray-200">
           <p className="text-black text-xl font-semibold">Menu</p>
-          <button
-            onClick={() => setSidebarOpen(false)}
-            className="text-gray-600 hover:text-black text-2xl font-bold cursor-pointer"
-          >
-            ✕
-          </button>
+          <button  onClick={() => setSidebarOpen(false)}  className="text-gray-600 hover:text-black text-2xl font-bold cursor-pointer"> ✕ </button>
         </div>
         <nav className="p-4 space-y-4 text-[#4E5036] font-medium">
           <Link href="/" onClick={() => setSidebarOpen(false)} className="block">Home</Link>
-          <Link href="/shop" onClick={() => setSidebarOpen(false)} className="block">Shop</Link>
-          <Link href="/our-story" onClick={() => setSidebarOpen(false)} className="block">Our Story</Link>
+          <Link href="/" onClick={() => setSidebarOpen(false)} className="block">Shop</Link>
+          <Link href="/Our-Story" onClick={() => setSidebarOpen(false)} className="block">Our Story</Link>
           <Link href="/wholesale" onClick={() => setSidebarOpen(false)} className="block">Wholesale</Link>
-          <Link href="/contact" onClick={() => setSidebarOpen(false)} className="block">Contact</Link>
+          <Link href="/contect-us" onClick={() => setSidebarOpen(false)} className="block">Contact</Link>
           <Link href="/offers" onClick={() => setSidebarOpen(false)} className="block">Offers</Link>
         </nav>
       </aside>

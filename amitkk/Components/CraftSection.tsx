@@ -32,7 +32,6 @@ export default function CraftSection() {
   return (
     <section className="bg-[#3e402d] text-white py-20 w-full">
       <div className="w-full px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between max-w-[1200px] mx-auto">
-        {/* Left Content */}
         <div className="w-full md:w-1/2 mb-8 md:mb-0">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-snug">
             Explore a wide <br /> selection of craft forms
@@ -44,8 +43,6 @@ export default function CraftSection() {
             Learn More
           </a>
         </div>
-
-        {/* Right Content (Counter) */}
         <div
           ref={ref}
           className="w-full md:w-1/2 flex flex-col md:items-center text-left md:text-center"

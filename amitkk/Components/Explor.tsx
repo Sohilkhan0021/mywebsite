@@ -5,9 +5,8 @@ export default function Collections() {
   const router = useRouter();
 
   return (
-    <section className="bg-[#f9f4ef] py-12 px-6 md:px-12">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16">
-        {/* Left Side */}
+    <section className="bg-[#f9f4ef] py-12 px-6 md:px-12 items-center">
+      <div className="container w-[85%] mx-auto flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16">
         <div className="flex-1 space-y-6 w-full">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-8">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 leading-snug">
