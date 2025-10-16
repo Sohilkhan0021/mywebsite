@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const MetalCraftSectionSchema = new mongoose.Schema({
   images: {
-    type: [String], // two images
+    type: [String], 
     required: true,
   },
 });

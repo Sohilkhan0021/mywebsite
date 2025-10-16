@@ -7,6 +7,7 @@ export interface IProduct extends Document {
   img: string;
   category: string;
   details: string;
+  stock: number;
 }
 
 const ProductSchema: Schema = new Schema(
@@ -17,6 +18,7 @@ const ProductSchema: Schema = new Schema(
     img: { type: String, required: true },
     category: String,
     details: String,
+    stock: { type: Number, required: true, default: 0 },
   },
   { timestamps: true }
 );

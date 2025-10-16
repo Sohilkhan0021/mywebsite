@@ -52,8 +52,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     form.parse(req, async (err, fields, files: any) => {
       if (err) return res.status(500).json({ message: "Form parsing failed", error: err });
+      
+      // const {  title, subtitle, category, details, price } = fields;
+      const { title, subtitle, category, details, price, stock } = fields;
 
-      const {  title, subtitle, category, details, price } = fields;
       const email = String(req.body.email || "");
       if (!email || !allowedAdmins.includes(email))
       return res.status(403).json({ message: "Not authorized" });
@@ -65,6 +67,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           files.image
             ? Array.isArray(files.image) ? files.image[0] : files.image
             : Array.isArray(files.file) ? files.file[0] : files.file;
+            if (fields.stock) product.stock = Number(fields.stock);
 
         if (uploadedFile) {
           if (product.img) {

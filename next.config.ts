@@ -1,16 +1,3 @@
-// import type { NextConfig } from "next";
-
-// const nextConfig: NextConfig = {
-//   reactStrictMode: true,
-//   images: {
-//     unoptimized: true, 
-//   },
-// };
-
-// export default nextConfig;
-
-
-
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -19,10 +6,10 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   eslint: {
-    ignoreDuringBuilds: true, // Ignore ESLint errors/warnings during build
+    ignoreDuringBuilds: true, 
   },
   typescript: {
-    ignoreBuildErrors: true, // Ignore TypeScript errors during build
+    ignoreBuildErrors: true, 
   },
 };
 

@@ -22,7 +22,6 @@ export default function Collections() {
             </button>
           </div>
 
-          {/* Categories Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-6 text-base sm:text-lg text-gray-700">
             <span
               onClick={() => router.push("/Women")}

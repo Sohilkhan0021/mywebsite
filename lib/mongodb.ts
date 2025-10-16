@@ -6,15 +6,12 @@ if (!MONGODB_URI) {
   throw new Error("Please define the MONGODB_URI in .env.local");
 }
 
-/**
- * Type for cached connection
- */
+
 type MongooseCache = {
   conn: Mongoose | null;
   promise: Promise<Mongoose> | null;
 };
 
-// Use globalThis for TypeScript-safe caching
 declare global {
   var mongooseCache: MongooseCache;
 }

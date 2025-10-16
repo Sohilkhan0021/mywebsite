@@ -1,10 +1,15 @@
-"use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function AdminDashboard() {
   const router = useRouter();
   const [user, setUser] = useState<{ email: string; role?: string } | null>(null);
+  const [stats, setStats] = useState({
+    totalSales: 0,
+    totalClients: 0,
+    totalProducts: 0,
+    totalStock: 0,
+  });
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -17,23 +22,81 @@ export default function AdminDashboard() {
     } else {
       router.push("/login");
     }
+
+    fetch("/api/admin/dashboardStats")
+      .then((res) => res.json())
+      .then((data) => {
+        setStats(data);
+      });
   }, []);
 
   return (
-    <div className="p-6 text-black mt-12">
-      <h1 className="text-3xl text-[#3E402D] font-bold mb-8">Admin Dashboard</h1>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
-        <div className="p-4 border">Total Sales: $182,450</div>
-        <div className="p-4 border">Total Clients: 1,437</div>
-        <div className="p-4 border">Total Products: 674</div>
-        <div className="p-4 border">Stock: 12,845</div>
+    <div className="p-4 sm:p-6 text-black mt-12 w-full max-w-6xl mx-auto">
+      <h1 className="text-2xl sm:text-3xl text-[#3E402D] font-bold mb-6 sm:mb-8 text-center sm:text-left">
+        Admin Dashboard
+      </h1>
+
+      {/* Stats Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <div className="p-4 border rounded-md text-center bg-white shadow-sm">
+          <p className="text-lg font-semibold">Total Sales</p>
+          <p className="text-gray-700">₹{stats.totalSales.toLocaleString()}</p>
+        </div>
+        <div className="p-4 border rounded-md text-center bg-white shadow-sm">
+          <p className="text-lg font-semibold">Total Clients</p>
+          <p className="text-gray-700">{stats.totalClients.toLocaleString()}</p>
+        </div>
+        <div className="p-4 border rounded-md text-center bg-white shadow-sm">
+          <p className="text-lg font-semibold">Total Products</p>
+          <p className="text-gray-700">{stats.totalProducts.toLocaleString()}</p>
+        </div>
+        <div className="p-4 border rounded-md text-center bg-white shadow-sm">
+          <p className="text-lg font-semibold">Stock</p>
+          <p className="text-gray-700">{stats.totalStock.toLocaleString()}</p>
+        </div>
       </div>
-      <div className="flex gap-4 mt-6">
-        <button className="bg-gray-300 p-4 rounded cursor-pointer"  onClick={() => router.push("/admin/products")}>Products</button>
-        <button  className="bg-gray-300 p-4 rounded cursor-pointer"onClick={() => router.push("/admin/clients")}>Clients</button>
-        <button  className="bg-gray-300 p-4 rounded cursor-pointer"onClick={() => router.push("/admin/metalcraft")}>MetalCraft</button>
-        <button  className="bg-gray-300 p-4 rounded cursor-pointer"onClick={() => router.push("admin/MetalSliderImages")}>MetalSliderImage</button>
+
+      {/* Buttons Section */}
+      <div className="flex flex-wrap gap-3 sm:gap-4 mt-6 justify-center sm:justify-start">
+        <button
+          className="bg-gray-300 hover:bg-gray-400 px-4 py-2 sm:px-5 sm:py-3 rounded-md cursor-pointer transition w-full sm:w-auto text-center"
+          onClick={() => router.push("/admin/products")}
+        >
+          Products
+        </button>
+        <button
+          className="bg-gray-300 hover:bg-gray-400 px-4 py-2 sm:px-5 sm:py-3 rounded-md cursor-pointer transition w-full sm:w-auto text-center"
+          onClick={() => router.push("/admin/clients")}
+        >
+          Clients
+        </button>
+        <button
+          className="bg-gray-300 hover:bg-gray-400 px-4 py-2 sm:px-5 sm:py-3 rounded-md cursor-pointer transition w-full sm:w-auto text-center"
+          onClick={() => router.push("/admin/metalcraft")}
+        >
+          MetalCraft
+        </button>
+        <button
+          className="bg-gray-300 hover:bg-gray-400 px-4 py-2 sm:px-5 sm:py-3 rounded-md cursor-pointer transition w-full sm:w-auto text-center"
+          onClick={() => router.push("admin/MetalSliderImages")}
+        >
+          MetalSliderImage
+        </button>
+        <button
+          className="bg-gray-300 hover:bg-gray-400 px-4 py-2 sm:px-5 sm:py-3 rounded-md cursor-pointer transition w-full sm:w-auto text-center"
+          onClick={() => router.push("admin/orderAddresses")}
+        >
+          orderAddresses
+        </button>
+
+         <button
+          className="bg-gray-300 hover:bg-gray-400 px-4 py-2 sm:px-5 sm:py-3 rounded-md cursor-pointer transition w-full sm:w-auto text-center"
+          onClick={() => router.push("admin/AllOrders")}
+        >
+          AllOrders
+        </button>
+
       </div>
-    </div>  
+    </div>
   );
 }

@@ -53,7 +53,7 @@ export default function HomeLiving() {
   return (
     <div className="w-[85%] mx-auto py-12 mt-3">
       <h1 className="text-3xl font-bold text-[#3e402d] mb-8 text-center">
-        Anmole Metal Craft Products
+        Home living  Craft Products
       </h1>
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-2 lg:gap-6 justify-items-center">
         {products.map((product, index) => (

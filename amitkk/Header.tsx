@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";  
 import { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/router";
 import { ShoppingCart, Heart, Search, MapPin, Menu } from "lucide-react";
@@ -73,7 +74,19 @@ useEffect(() => {
       <header className="bg-[#F9F2EA] shadow fixed top-0 left-0 w-full z-50 ">
         <div className="max-w-[1200px] w-full mx-auto px-4 sm:px-6 md:px-2 flex justify-between items-center py-4">
           <nav className="hidden md:flex items-center lg:gap-8 md:gap-4 text-[#7a7469] font-medium">
-            <Link href="/">Home</Link>
+
+
+            <Link href="/">
+              <Image  src="/images/logo.jpg"
+                alt="Logo"
+                width={40}   
+                height={20}  
+                className="object-contain cursor-pointer"
+              />
+            </Link>
+
+
+
             <Link href="/">Shop</Link>
             <Link href="/Our-Story">Our Story</Link>
             <Link href="/wholesale">Wholesale</Link>
@@ -108,6 +121,18 @@ useEffect(() => {
                     >
                       Your Profile
                     </button>
+
+                    <button
+                      onClick={() => {
+                        setDropdownOpen(false);
+                        router.push("/myorders");
+                      }}
+                      className="block w-full text-left px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                    >
+                      Orders
+                    </button>
+
+
                     <button
                       onClick={() => {
                         setDropdownOpen(false);
