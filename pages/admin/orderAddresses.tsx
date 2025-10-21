@@ -60,10 +60,15 @@ export default function AdminOrderAddress() {
                   ₹{order.totalAmount.toLocaleString()}
                 </td>
                 <td className="px-3 sm:px-4 py-2 sm:max-w-xs break-words whitespace-normal">
-                  {order.address.name}, {order.address.street}, {order.address.city},{" "}
-                  {order.address.state}, {order.address.pincode},{" "}
-                  {order.address.country}, Phone: {order.address.phone}
+                  {order.address
+                    ? <>
+                        {order.address?.name}, {order.address?.street}, {order.address?.city},{" "}
+                        {order.address?.state}, {order.address?.pincode},{" "}
+                        {order.address?.country}, Phone: {order.address?.phone}
+                      </>
+                    : <span className="text-gray-500 italic">No address available</span>}
                 </td>
+
                 <td className="px-3 sm:px-4 py-2 whitespace-nowrap break-all">
                   {order.paymentId}
                 </td>

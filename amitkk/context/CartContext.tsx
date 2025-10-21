@@ -5,7 +5,7 @@ type Product = {
   id: string;
   title: string;
   subtitle?: string;
-  img?: string;
+  img?: string; 
   price?: number;
   quantity: number;
    stock?: number;
@@ -55,35 +55,72 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
   };
 
+  // const addToCart = (product: Product, userId?: string) => {
+  //   setCart((prev) => {
+  //     const existing = prev.find((p) => p.id === product.id);
+  //     const updated = existing
+  //       ? prev.map((p) => (p.id === product.id ? { ...p, quantity: p.quantity + product.quantity } : p))
+  //       : [...prev, product];
+
+  //     if (userId) {
+  //       fetch("/api/cart", {
+  //         method: "POST",
+  //         headers: { "Content-Type": "application/json" },
+  //         body: JSON.stringify({
+  //           userId,
+  //           products: updated.map((p) => ({
+  //             productId: p.id,
+  //             title: p.title,
+  //             subtitle: p.subtitle,
+  //             image: p.img,
+  //             price: p.price,
+  //             quantity: p.quantity,
+  //           })),
+  //         }),
+  //       }).catch(console.error);
+  //     }
+
+  //     return updated;
+  //   });
+  // };
+
+
+
+
+
   const addToCart = (product: Product, userId?: string) => {
-    setCart((prev) => {
-      const existing = prev.find((p) => p.id === product.id);
-      const updated = existing
-        ? prev.map((p) => (p.id === product.id ? { ...p, quantity: p.quantity + product.quantity } : p))
-        : [...prev, product];
+  setCart((prev) => {
+    const existing = prev.find((p) => p.id === product.id);
+    const updated = existing
+      ? prev.map((p) => 
+          p.id === product.id 
+          ? { ...p, quantity: p.quantity + product.quantity } 
+          : p
+        )
+      : [...prev, product];
 
-      // Save to DB if user logged in
-      if (userId) {
-        fetch("/api/cart", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            userId,
-            products: updated.map((p) => ({
-              productId: p.id,
-              title: p.title,
-              subtitle: p.subtitle,
-              image: p.img,
-              price: p.price,
-              quantity: p.quantity,
-            })),
-          }),
-        }).catch(console.error);
-      }
+    if (userId) {
+      fetch("/api/cart", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          userId,
+          products: updated.map((p) => ({
+            productId: p.id,
+            title: p.title,
+            subtitle: p.subtitle,
+            image: p.img,
+            price: p.price,
+            quantity: p.quantity,
+          })),
+        }),
+      }).catch(console.error);
+    }
 
-      return updated;
-    });
-  };
+    return updated;
+  });
+};
+
 
   const removeFromCart = (id: string, userId?: string) => {
     setCart((prev) => {

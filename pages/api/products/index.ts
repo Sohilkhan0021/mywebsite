@@ -16,8 +16,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     form.parse(req, async (err, fields, files: any) => {
       if (err) return res.status(500).json({ message: "Form parsing failed", error: err });
-
-      // const { title, subtitle, category, details, price, email } = fields;
       const { title, subtitle, category, details, price, email, stock } = fields;
 
       const emailStr = Array.isArray(email) ? email[0] : email;
@@ -43,29 +41,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           folder: "products",
         });
 
-
-   
-        // const newProduct = await Product.create({
-        //   title,
-        //   subtitle,
-        //   category,
-        //   details,
-        //   price: Number(price),
-        //   img: uploadResult.secure_url,
-        // });
-
-
-
         const newProduct = await Product.create({
-  title,
-  subtitle,
-  category,
-  details,
-  price: Number(price),
-  img: uploadResult.secure_url,
-  stock: stock ? Number(stock) : 0, 
-});
-
+          title,
+          subtitle,
+          category,
+          details,
+          price: Number(price),
+          img: uploadResult.secure_url,
+          stock: stock ? Number(stock) : 0, 
+        });
 
         return res.status(200).json(newProduct);
       } catch (error) {

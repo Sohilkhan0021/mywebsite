@@ -53,14 +53,8 @@ const AllOrders: React.FC = () => {
 
     const token = typeof window !== "undefined" ? localStorage.getItem("admintoken") : null;
 
-
-
-
-
     const fetchOrders = async () => {
         try {
-            // if (!token) return;
-
             const res = await fetch("/api/orders", {
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -134,10 +128,10 @@ const AllOrders: React.FC = () => {
 
     return (
         <div className="max-w-6xl mx-auto mt-8 px-4">
-            <div className="md:flex flex-wrap justify-between mb-6 gap-2">
+            <div className="md:flex flex-wrap justify-between mb-6 gap-2 text-black">
                 <button
                     onClick={() => setSelectedStatus("")}
-                    className={`btn-border ${selectedStatus === "" ? "bg-secondary font-bold text-white" : ""}`}
+                    className={`btn-border ${selectedStatus === "" ? "bg-secondary font-bold text-black" : ""}`}
                 >
                     All
                 </button>
@@ -145,7 +139,7 @@ const AllOrders: React.FC = () => {
                     <button
                         key={status}
                         onClick={() => setSelectedStatus(status)}
-                        className={`btn-border ${selectedStatus === status ? "bg-secondary font-bold text-white" : ""}`}
+                        className={`btn-border ${selectedStatus === status ? "bg-secondary font-bold text-black" : ""}`}
                     >
                         {status.charAt(0).toUpperCase() + status.slice(1)}
                     </button>

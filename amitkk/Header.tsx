@@ -12,6 +12,7 @@ export default function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [cartSidebarOpen, setCartSidebarOpen] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const router = useRouter();
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -41,6 +42,21 @@ useEffect(() => {
 }, []);
 
 
+
+    useEffect(() => {
+      const updateUser = () => {
+        const storedUser = localStorage.getItem("user");
+        setUser(storedUser ? JSON.parse(storedUser) : null);
+      };
+      window.addEventListener("userLogin", updateUser);
+      updateUser();
+      return () => {
+        window.removeEventListener("userLogin", updateUser);
+      };
+    }, []);
+
+
+
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -66,6 +82,7 @@ useEffect(() => {
     if (searchQuery.trim()) {
       router.push(`/search?query=${encodeURIComponent(searchQuery.trim())}`);
       setSearchQuery("");
+      setShowSearch(false);
     }
   };
 
@@ -84,9 +101,6 @@ useEffect(() => {
                 className="object-contain cursor-pointer"
               />
             </Link>
-
-
-
             <Link href="/">Shop</Link>
             <Link href="/Our-Story">Our Story</Link>
             <Link href="/wholesale">Wholesale</Link>
@@ -117,9 +131,7 @@ useEffect(() => {
                         setDropdownOpen(false);
                         router.push("/profile");
                       }}
-                      className="block w-full text-left px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                    >
-                      Your Profile
+                      className="block w-full text-left px-4 py-2 hover:bg-gray-100 cursor-pointer">Your Profile
                     </button>
 
                     <button
@@ -127,12 +139,8 @@ useEffect(() => {
                         setDropdownOpen(false);
                         router.push("/myorders");
                       }}
-                      className="block w-full text-left px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                    >
-                      Orders
+                      className="block w-full text-left px-4 py-2 hover:bg-gray-100 cursor-pointer">Orders
                     </button>
-
-
                     <button
                       onClick={() => {
                         setDropdownOpen(false);
@@ -148,7 +156,34 @@ useEffect(() => {
             )}
 
             <MapPin className="w-5 h-5 cursor-pointer" />
-            <Search className="w-5 h-5 cursor-pointer" />
+
+            <div className="relative">
+                <Search
+                  className="w-5 h-5 cursor-pointer"
+                  onClick={() => setShowSearch((prev) => !prev)}
+                />
+                {showSearch && (
+                  <form
+                    onSubmit={handleSearch}
+                    className="absolute top-full right-0 mt-2 bg-white border rounded-md shadow-md flex items-center"
+                  >
+                    <input
+                      type="text"
+                      placeholder="Search products..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="px-2 py-1 text-black border-none outline-none w-48"
+                    />
+                    <button
+                      type="submit"
+                      className="bg-[#3e402d] text-white px-3 py-1 rounded-r-md"
+                    >
+                      Go
+                    </button>
+                  </form>
+                )}
+              </div>
+
              
               <div className="flex items-center gap-6">
                 <Link href="/Wishlist" className="relative cursor-pointer">
