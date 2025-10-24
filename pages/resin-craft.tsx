@@ -75,7 +75,7 @@ export default function ResinCraftPage() {
 
   return (
     <div className="w-[85%] mx-auto py-12">
-      <h1 className="text-3xl font-bold text-[#3e402d] mb-8 text-center">
+      <h1 className="text-3xl font-bold text-[#3e402d] mb-8 text-center mt-4">
         Anmole Best Choice Resin Craft Products
       </h1>
 

@@ -14,7 +14,6 @@ export default function LoginPage({ onClose }: props) {
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmpassword] = useState("");
   const router = useRouter();
-  // const { syncCartAfterLogin } = useCart(); 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,8 +40,6 @@ export default function LoginPage({ onClose }: props) {
 
         window.dispatchEvent(new Event("userLogin"));
         toast.success(data.message || "Login successful!");
-
-        // await syncCartAfterLogin(data.user._id || data.user.id); 
 
         if (data.user.role === "admin") {
           router.push("/admin");

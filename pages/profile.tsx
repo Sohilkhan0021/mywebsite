@@ -263,7 +263,7 @@ export default function ProfilePage() {
   if (!user) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#FAF7F2]">
-        <p className="text-lg">Please login to view your profile.</p>
+        <p className="text-lg text-black">Please login to view your profile.</p>
       </div>
     );
   }

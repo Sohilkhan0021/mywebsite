@@ -23,23 +23,23 @@ export default function Header() {
 
 
 
-useEffect(() => {
-  const handleStorageChange = () => {
-    const storedUser = localStorage.getItem("user");
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-    } else {
-      setUser(null);
-    }
-  };
+    useEffect(() => {
+      const handleStorageChange = () => {
+        const storedUser = localStorage.getItem("user");
+        if (storedUser) {
+          setUser(JSON.parse(storedUser));
+        } else {
+          setUser(null);
+        }
+      };
 
-  window.addEventListener("storage", handleStorageChange);
-  handleStorageChange(); 
+      window.addEventListener("storage", handleStorageChange);
+      handleStorageChange(); 
 
-  return () => {
-    window.removeEventListener("storage", handleStorageChange);
-  };
-}, []);
+      return () => {
+        window.removeEventListener("storage", handleStorageChange);
+      };
+    }, []);
 
 
 

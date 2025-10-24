@@ -346,7 +346,7 @@ export default function SignupPage() {
                       if (res.ok) toast.success(data.message);
                       else toast.error(data.message);
                     }}
-                    className="bg-[#3E402D] text-white px-3 py-1 rounded text-xs hover:bg-[#9B9B93]"
+                    className="bg-[#3E402D] text-white px-3 py-1 rounded text-xs hover:bg-[#9B9B93] cursor-pointer"
                   >
                     Send OTP
                   </button>
@@ -367,7 +367,7 @@ export default function SignupPage() {
                 <button
                   type="button"
                   onClick={verifyOtp}
-                  className="mt-3 bg-[#3E402D] text-white py-2 px-4 rounded hover:bg-[#50523B] text-sm"
+                  className="mt-3 bg-[#3E402D] text-white py-2 px-4 rounded hover:bg-[#50523B] text-sm cursor-pointer"
                 >
                   Verify OTP
                 </button>
