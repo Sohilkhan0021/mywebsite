@@ -38,6 +38,30 @@ export default function LoginPage({ onClose }: props) {
         localStorage.setItem("user", JSON.stringify(data.user));
         localStorage.setItem("token", data.token || "");
 
+     const storedCart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+      if (storedCart.length > 0) {
+        try {
+          for (const product of storedCart) {
+            await fetch("/api/cart", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                userId: data.user._id, // from backend
+                product, // full product object
+              }),
+            });
+          }
+          // ✅ Step 2: Clear guest cart after syncing
+          localStorage.removeItem("cart");
+          toast.success("Cart synced successfully!");
+        } catch (err) {
+          console.error("Cart sync error:", err);
+        }
+      }
+
         window.dispatchEvent(new Event("userLogin"));
         toast.success(data.message || "Login successful!");
 
